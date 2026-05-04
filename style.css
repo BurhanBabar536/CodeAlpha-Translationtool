@@ -1,0 +1,316 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+
+     box-sizing: border-box;
+}
+
+ body {
+     background-color: #f0f2f5;
+
+     font-family: 'Segoe UI', Arial, sans-serif;
+
+     min-height: 100vh;
+
+     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* Breathing room at top and bottom */
+    padding: 40px 16px;
+}
+
+
+ 
+
+.container {
+    /* White background for the card */
+    background-color: #ffffff;
+
+    /* Rounded corners */
+    border-radius: 16px;
+
+    /* Soft shadow so the card lifts off the background */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+    /* Inner spacing so content doesn't touch the edges */
+    padding: 40px;
+
+    /* Maximum width — won't stretch too wide on large screens */
+    max-width: 800px;
+
+    /* Takes full width on small screens, up to max-width */
+    width: 100%;
+}
+
+ 
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+
+    /* Space below the heading */
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #6b7280;
+
+    /* Space below the subtitle before the dropdowns */
+    margin-bottom: 28px;
+}
+
+
+ 
+
+.language-row {
+    /* Puts the two dropdowns and arrow side by side */
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+/* Each individual dropdown group (label + select) */
+.lang-group {
+    /* Each group grows to fill equal space */
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* The label text above each dropdown */
+.lang-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+
+    /* Uppercase makes labels look clean */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* The dropdown select box */
+.lang-group select {
+    padding: 10px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #1a1a2e;
+    background-color: #f9fafb;
+
+    /* Removes the default ugly browser appearance */
+    appearance: none;
+
+    /* Custom dropdown arrow using a unicode character */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+/* Highlight the border when user clicks on a dropdown */
+.lang-group select:focus {
+    outline: none;
+    border-color: #6366f1;
+    background-color: #ffffff;
+}
+
+/* The → arrow between the two dropdowns */
+.arrow {
+    font-size: 22px;
+    color: #9ca3af;
+
+    /* Push it down slightly to align with the select box */
+    padding-bottom: 10px;
+}
+
+
+ 
+
+.textareas-row {
+    /* Puts the two text areas side by side, equal width */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+/* Each textarea group (label + textarea box) */
+.textarea-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Label above each textarea */
+.textarea-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Both textarea boxes */
+.textarea-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1a1a2e;
+    line-height: 1.6;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+/* Input box gets a white background (user types here) */
+#input-text {
+    background-color: #ffffff;
+}
+
+/* Output box gets a light gray so user knows it's read-only */
+#output-text {
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+/* Highlight input box when user clicks in it */
+.textarea-group textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+
+ 
+
+.buttons-row {
+    /* Puts buttons side by side */
+    display: flex;
+    gap: 10px;
+
+    /* Wraps to next line on small screens */
+    flex-wrap: wrap;
+
+    margin-bottom: 16px;
+}
+
+/* Style for ALL buttons */
+.buttons-row button {
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+
+    /* Smooth animation when hovering */
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Slightly shrink button when clicked — feels satisfying */
+.buttons-row button:active {
+    transform: scale(0.97);
+}
+
+/* TRANSLATE button — purple, stands out as the main action */
+#translate-btn {
+    background-color: #6366f1;
+    color: #ffffff;
+
+    /* Grow to fill remaining space */
+    flex: 1;
+}
+
+#translate-btn:hover {
+    background-color: #4f46e5;
+}
+
+/* COPY button — teal/green */
+#copy-btn {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+#copy-btn:hover {
+    background-color: #059669;
+}
+
+/* SPEAK button — amber/orange */
+#speak-btn {
+    background-color: #f59e0b;
+    color: #ffffff;
+}
+
+#speak-btn:hover {
+    background-color: #d97706;
+}
+
+/* CLEAR button — light gray, less prominent */
+#clear-btn {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+#clear-btn:hover {
+    background-color: #d1d5db;
+}
+
+
+ 
+
+#status-message {
+    font-size: 14px;
+    color: #6b7280;
+    min-height: 20px;
+
+    /* Space above the message */
+    margin-top: 4px;
+}
+
+
+ 
+
+ @media (max-width: 600px) {
+
+    /* Less padding on small screens */
+    .container {
+        padding: 24px 16px;
+    }
+
+    /* Stack the two dropdowns vertically on phones */
+    .language-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Hide the → arrow on phones (it looks weird when stacked) */
+    .arrow {
+        display: none;
+    }
+
+    /* Stack the two textareas vertically on phones */
+    .textareas-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack buttons vertically on phones */
+    .buttons-row {
+        flex-direction: column;
+    }
+
+    .buttons-row button {
+        width: 100%;
+    }
+}

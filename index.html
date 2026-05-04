@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- This tells the browser what kind of document this is -->
+    <meta charset="UTF-8">
+
+    <!-- This makes the page look good on mobile phones too -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is the title shown on the browser tab -->
+    <title>Language Translation Tool</title>
+
+    <!-- This links your CSS file (we'll create this next) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+     <div class="container">
+
+        <!-- The top heading of your app -->
+        <h1>Language Translator</h1>
+        <p class="subtitle">Type your text, choose languages, and hit Translate</p>
+
+        <!-- ======= TOP ROW: Language selectors ======= -->
+        <div class="language-row">
+
+            <!-- Source language dropdown (what language you're translating FROM) -->
+            <div class="lang-group">
+                <label for="source-lang">From</label>
+                <select id="source-lang">
+                    <option value="en">English</option>
+                    <option value="ur">Urdu</option>
+                    <option value="ar">Arabic</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                    <option value="hi">Hindi</option>
+                    <option value="tr">Turkish</option>
+                </select>
+            </div>
+
+            <!-- Arrow symbol in the middle -->
+            <div class="arrow">&#8594;</div>
+
+            <!-- Target language dropdown (what language you're translating TO) -->
+            <div class="lang-group">
+                <label for="target-lang">To</label>
+                <select id="target-lang">
+                    <option value="ur">Urdu</option>
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                    <option value="hi">Hindi</option>
+                    <option value="tr">Turkish</option>
+                </select>
+            </div>
+
+        </div>
+        <!-- End of language row -->
+
+
+        <!-- ======= TEXT AREAS ROW ======= -->
+        <div class="textareas-row">
+
+            <!-- Left side: user types here -->
+            <div class="textarea-group">
+                <label for="input-text">Your text</label>
+                <textarea 
+                    id="input-text" 
+                    placeholder="Type something here..."
+                    rows="6"
+                ></textarea>
+            </div>
+
+            <!-- Right side: translated text appears here -->
+            <div class="textarea-group">
+                <label for="output-text">Translation</label>
+                <textarea 
+                    id="output-text" 
+                    placeholder="Translation will appear here..."
+                    rows="6"
+                    readonly
+                ></textarea>
+            </div>
+
+        </div>
+        <!-- End of textareas row -->
+
+
+        <!-- ======= BUTTONS ROW ======= -->
+        <div class="buttons-row">
+
+            <!-- Main translate button -->
+            <button id="translate-btn">Translate</button>
+
+            <!-- Copy button (copies the translated text) -->
+            <button id="copy-btn">Copy Translation</button>
+
+            <!-- Speak button (reads translated text aloud) -->
+            <button id="speak-btn">Speak</button>
+
+            <!-- Clear button (empties both boxes) -->
+            <button id="clear-btn">Clear</button>
+
+        </div>
+        <!-- End of buttons row -->
+
+
+        <!-- ======= STATUS MESSAGE ======= -->
+        <!-- This area shows messages like "Translating..." or error messages -->
+        <p id="status-message"></p>
+
+    </div>
+    <!-- End of container -->
+
+
+    <!-- This links your JavaScript file (we'll create this after CSS) -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
